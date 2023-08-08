@@ -10,7 +10,7 @@ let incomingNotificationAlert = null;
 var defaultSettings = {
 	"debug":"INFO",
 	"permOnClick":false,
-	"codecs":[ "PCMU" ],
+	"codecs":[ "OPUS" ],
 	"enableIPV6":false,
 	"audioConstraints":{
 	"optional":[ {
