@@ -12,7 +12,13 @@ var defaultSettings = {
 	"permOnClick":false,
 	"codecs":[ "PCMU","OPUS" ],
 	"enableIPV6":false,
-	"audioConstraints":{"optional":[{"googAutoGainControl":false}]},
+	"audioConstraints": {
+		"optional": [
+			{ "googAutoGainControl": true },
+			{ "googEchoCancellation": true },
+			{ "googNoiseSuppression": true }
+		]
+	},
 	"dscp":true,
 	"enableTracking":true,
 	"closeProtection":false,
