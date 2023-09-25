@@ -185,7 +185,6 @@ function onLogin(){
 		let callerid = document.getElementById("callerid");
 		callerid.value = customCallerId;
 	}
-	plivoBrowserSdk.client.browser
 	plivoBrowserSdk.client.audio.speakerDevices.set('default')
 
 	$('#makecall').attr('class', 'btn btn-success btn-block flatbtn makecall');
