@@ -23,7 +23,7 @@ var defaultSettings = {
 	"enableTracking":true,
 	"closeProtection":false,
 	"maxAverageBitrate":48000,
-	"preDetectOwa":true,
+	"preDetectOwa": false,
 	"allowMultipleIncomingCalls":false,
 	"dtmfOptions":{sendDtmfType:["outband","inband"]} 
   };
