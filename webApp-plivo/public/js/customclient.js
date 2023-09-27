@@ -23,7 +23,6 @@ var defaultSettings = {
 	"enableTracking":true,
 	"closeProtection":false,
 	"maxAverageBitrate":48000,
-	// "preDetectOwa": true,
 	"allowMultipleIncomingCalls":false,
 	"dtmfOptions":{sendDtmfType:["outband","inband"]} 
   };
@@ -79,15 +78,15 @@ function audioDeviceChange(e){
 	console.log('audioDeviceChange',e);
 	if(e.change){
 		if(e.change == "added"){
-			if (e.device.kind === 'audioinput') {
-				setTimeout(() => {
-					plivoBrowserSdk.client.audio.microphoneDevices.set(e.device.deviceId)
-				}, 1000)
-			} else {
-				setTimeout(() => {
-					plivoBrowserSdk.client.audio.speakerDevices.set(e.device.deviceId)
-				}, 1000)
-			}
+			// if (e.device.kind === 'audioinput') {
+			// 	setTimeout(() => {
+			// 		plivoBrowserSdk.client.audio.microphoneDevices.set(e.device.deviceId)
+			// 	}, 1000)
+			// } else {
+			// 	setTimeout(() => {
+			// 		plivoBrowserSdk.client.audio.speakerDevices.set(e.device.deviceId)
+			// 	}, 1000)
+			// }
 			customAlert(e.change,e.device.kind +" - "+e.device.label,'info');		
 		}else{
 			customAlert(e.change,e.device.kind +" - "+e.device.label,'warn');		
