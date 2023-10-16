@@ -757,6 +757,7 @@ function showKeypadInfo() {
 	$('.calleridinfo').show();
 	$('#makecall').show();
 	$('.micsettingslink').show();
+	document.getElementById('noiseReduction').appendChild(document.getElementById('ongoingNoiseReduction'))
 	document.getElementById('showKeypad').value = 'showKeypad';
 	$('#showKeypad').html('SHOW KEYPAD');
 }
@@ -842,6 +843,8 @@ $('#makecall').click(function(e){
 	callStorage.startTime = date();
 	callStorage.num = to; 
 	$('.phone').hide();
+	let noiseReduction = document.getElementById('ongoingNoiseReduction')
+	document.getElementById('callanswerpad').appendChild(noiseReduction)
 	$('.AfterAnswer').show();
 	$('#boundType').html('Outgoing : '+to);
 	$('#callDuration').html('00:00:00');
@@ -1095,7 +1098,15 @@ function initPhone(username, password){
 	plivoBrowserSdk.client.on('onConnectionChange', onConnectionChange); // To show connection change events
 	plivoBrowserSdk.client.on('volume', volume);
 	//onSessionExpired
-
+	$("#toggleButton").change(function () {
+		if (this.checked) {
+			// Button is checked (toggled on)
+			plivoBrowserSdk.client.startNoiseReduction()
+		} else {
+			// Button is not checked (toggled off)
+			plivoBrowserSdk.client.stopNoiseReduction()
+		}
+	});
 	// Methods 
 	plivoBrowserSdk.client.setRingTone(true);
 	plivoBrowserSdk.client.setRingToneBack(false);
