@@ -24,6 +24,7 @@ var defaultSettings = {
 	"closeProtection":false,
 	"maxAverageBitrate":48000,
 	"allowMultipleIncomingCalls":false,
+	"enableNoiseReduction": false,
 	"dtmfOptions":{sendDtmfType:["outband","inband"]} 
   };
 
@@ -65,13 +66,13 @@ function kickStartNow(){
 }
 
 function login(username, password) {
-	if(username && password){
+	// if(username && password){
 		//start UI load spinner
 		kickStartNow();			
-		plivoBrowserSdk.client.login(username, password);
-	}else{
-		console.error('username/password missing!')
-	}
+		plivoBrowserSdk.client.login("CSDK76616054087807850357", "huzaif");
+	// }else{
+	// 	console.error('username/password missing!')
+	// }
 }
 
 function audioDeviceChange(e){
